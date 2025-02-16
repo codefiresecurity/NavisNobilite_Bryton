@@ -1,6 +1,7 @@
 import os
 from nextcloud import NextCloud
 from urllib.parse import urlparse
+from dotenv import load_dotenv
 
 def downloadFiles(nextcloudUrl, username, password, remoteFolder, localFolder):
     try:
@@ -38,8 +39,11 @@ def downloadFiles(nextcloudUrl, username, password, remoteFolder, localFolder):
         print(f"An error occured: {str(e)}")
 
 if __name__ == "__main__":
-
-    REMOTE_FOLDER = "Fitness"
-    LOCAL_FOLDER = "./toProcess"
+    load_dotenv()
+    NEXTCLOUD_URL = os.getenv('NEXTCLOUD_URL')
+    USERNAME = os.getenv('USERNAME')
+    PASSWORD = os.getenv('PASSWORD')
+    REMOTE_FOLDER = os.getenv('REMOTE_FOLDER')
+    LOCAL_FOLDER = os.getenv('LOCAL_FOLDER')
 
     downloadFiles(NEXTCLOUD_URL, USERNAME, PASSWORD, REMOTE_FOLDER, LOCAL_FOLDER)
