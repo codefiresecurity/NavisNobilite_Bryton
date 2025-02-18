@@ -1,6 +1,8 @@
 import requests
 from typing import Optional, Dict, List, Union
 from datetime import datetime
+from dotenv import load_dotenv
+import os
 
 class RWGPSRoutes:
     def __init__(self, auth_token: str, api_key: str):
@@ -125,9 +127,14 @@ def save_route_to_file(route: Dict, filename: Optional[str] = None) -> str:
     return filename
 
 if __name__ == "__main__":
+
     # Example usage
-    AUTH_TOKEN = "your_auth_token"
-    API_KEY = "your_api_key"
+
+    load_dotenv()
+
+
+    AUTH_TOKEN = os.getenv("RWGPS_APIT")
+    API_KEY = os.getenv("RWGPS_APIK")
     
     # Initialize the routes client
     rwgps = RWGPSRoutes(AUTH_TOKEN, API_KEY)
