@@ -146,8 +146,7 @@ def uploadToRWGPS(localFolder, rwgpsApiK, rwgpsAuthT, notifyChannel):
         }
 
         response = requests.post(url, headers=headers, files=files)
-        if response.status_code in [200, 201, 202]:            
-            
+        if response.status_code in [200, 201, 202]:                        
             notify("Successful upload of " + str(file.name), notifyChannel)            
         else:
             print(f"Upload failed. Status Code: {response.status_code}")
