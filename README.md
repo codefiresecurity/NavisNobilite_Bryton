@@ -27,3 +27,4 @@ The S800 bike computer that I have doesn't include the ability in it's mobile ap
 10. Add the topic name in the .env NOTIFY_CHANNEL variable.
 11. Add your RideWithGPS email address and password to RWGPS_USER and RWGPS_PASS variables in the .env file. (You may need to set a password in RideWithGPS if you use social logins).
 12. Add your RideWithGPS API key to the RWGPS_APIK variable in the .env file. (You can get your key here [https://**ridewithgps**.com/settings/developers](https://ridewithgps.com/settings/developers)
+13. Test and use cron or other scheduler to run on a time basis.
